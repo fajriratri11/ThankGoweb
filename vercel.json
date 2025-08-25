@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/wedding/:slug",
-      "destination": "/undangan/template-1/index.html"
+      "destination": "/undangan/Template1/index.html"
     }
   ]
 }
