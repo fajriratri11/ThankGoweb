@@ -45,10 +45,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // --- 1. Coba metode Vercel (URL Path) ---
     // --- 1. Coba metode Vercel (URL Path dengan akhiran -wedding) ---
-    const path = window.location.pathname; // contoh: "/rudi-siti-wedding"
-    if (path.endsWith("-wedding")) {
-      // Menghapus '/ ' di awal dan '-wedding' di akhir untuk mendapatkan slug
-      slug = path.substring(1, path.length - "-wedding".length);
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    if (pathSegments.length >= 2 && pathSegments[0] === "wedding") {
+      slug = pathSegments[1];
       console.log("Mode: Vercel. Slug ditemukan dari path:", slug);
     }
 
