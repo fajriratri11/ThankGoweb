@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Undangan Pernikahan</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&family=Dancing+Script:wght@700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body class="bg-gray-100 font-poppins">
+    <div
+      id="sampul"
+      class="fixed top-0 left-0 w-full h-full bg-cover bg-center bg-gray-800 z-50 flex flex-col justify-center items-center text-white p-4"
+      style="
+        background-image: url('assets/img/bg-floral.jpg');
+      "
+    >
+      <div
+        class="absolute top-0 left-0 w-full h-full bg-black opacity-50"
+      ></div>
+      <div
+        class="relative text-center z-10"
+        data-aos="fade-down"
+        data-aos-duration="1500"
+      >
+        <h1 class="font-playfair text-4xl md:text-5xl mb-4">The Wedding of</h1>
+        <h2 id="sampul-nama-mempelai" class="font-dancing text-6xl md:text-8xl mb-6"></h2>
+        <p class="mb-2">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <p
+          id="nama-tamu"
+          class="text-2xl font-bold bg-white bg-opacity-20 px-4 py-2 rounded-lg"
+        >
+          Nama Tamu
+        </p>
+        <p class="mt-8 mb-4">
+          Tanpa mengurangi rasa hormat, kami mengundang Anda untuk hadir di
+          acara pernikahan kami.
+        </p>
+
+        <div id="countdown" class="flex justify-center space-x-4 text-xl my-8">
+          <div>
+            <span id="days" class="font-bold text-3xl">00</span><br />Hari
+          </div>
+          <div>
+            <span id="hours" class="font-bold text-3xl">00</span><br />Jam
+          </div>
+          <div>
+            <span id="minutes" class="font-bold text-3xl">00</span><br />Menit
+          </div>
+          <div>
+            <span id="seconds" class="font-bold text-3xl">00</span><br />Detik
+          </div>
+        </div>
+
+        <button
+          id="buka-undangan"
+          class="bg-white text-gray-800 font-bold py-2 px-6 rounded-full hover:bg-gray-200 transition duration-300 flex items-center mx-auto"
+        >
+          <i class="fas fa-envelope-open mr-2"></i> Buka Undangan
+        </button>
+      </div>
+    </div>
+
+    <main id="konten-utama" class="hidden">
+      <div id="music-player" class="fixed bottom-24 right-4 z-40">
+        <img
+          src="assets/img/piringan-hitam.png"
+          alt="Music Player"
+          id="vinyl-record"
+          class="w-16 h-16 cursor-pointer"
+        />
+      </div>
+      <audio
+          id="background-audio"
+          src=""
+          loop
+      ></audio>
+
+      <section id="home" class="py-20 px-4 text-center h-screen bg-cover bg-white">
+        <div class="container mx-auto">
+          <div data-aos="fade-down">
+            <h2 class="font-dancing text-4xl md:text-5xl text-[#9D5C75] mb-4">
+              Dengan Rahmat Tuhan Yang Maha Esa
+            </h2>
+            <p class="font-poppins text-gray-600 max-w-3xl mx-auto mb-16">
+              Kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa
+              restu pada acara pernikahan kami:
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-12"
+          >
+            <div
+              class="flex flex-col items-center md:w-1/3"
+              data-aos="fade-right"
+              data-aos-duration="1000"
+            >
+              <div class="bg-white p-2 rounded-full shadow-lg mb-6">
+                <img
+                  id="foto-pria"
+                  src="assets/img/man.png"
+                  alt="Mempelai Pria"
+                  class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover"
+                />
+              </div>
+              <h3 id="nama-pria" class="font-dancing text-4xl text-[#9D5C75]"></h3>
+              <p
+                id="orangtua-pria"
+                class="font-poppins text-gray-600 mt-2 text-sm"
+              ></p>
+            </div>
+
+            <div class="hidden md:block" data-aos="zoom-in" data-aos-delay="200">
+              <p class="font-dancing text-6xl text-[#9D5C75]">&</p>
+            </div>
+            <div class="block md:hidden" data-aos="zoom-in" data-aos-delay="200">
+              <p class="font-dancing text-4xl text-[#9D5C75]">&</p>
+            </div>
+
+            <div
+              class="flex flex-col items-center md:w-1/3"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+            >
+              <div class="bg-white p-2 rounded-full shadow-lg mb-6">
+                <img
+                  id="foto-wanita"
+                  src="assets/img/woman.png"
+                  alt="Mempelai Wanita"
+                  class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover"
+                />
+              </div>
+              <h3 id="nama-wanita" class="font-dancing text-4xl text-[#9D5C75]"></h3>
+              <p
+                id="orangtua-wanita"
+                class="font-poppins text-gray-600 mt-2 text-sm"
+              ></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="acara" class="py-20 px-4 bg-black text-white">
+        <div class="container mx-auto text-center">
+          <h2
+            class="font-dancing text-6xl md:text-7xl text-[#F472B6] mb-8"
+            data-aos="fade-down"
+          >
+            Informasi Acara
+          </h2>
+
+          <div class="max-w-3xl mx-auto" data-aos="fade-up">
+            <p id="lokasi-acara" class="font-semibold"></p>
+            <a id="maps-url" href="" target="_blank" rel="noopener noreferrer" class="...">
+                <i class="fa-solid fa-map-location-dot mr-2"></i>Lihat Lokasi di Peta
+            </a>
+
+            <p class="text-white/70 text-sm mb-16">
+              Diharapkan untuk tidak salah alamat dan tanggal. Manakala tiba di
+              tujuan namun tidak ada tanda-tanda dilangsungkan pernikahan, boleh
+              jadi Anda salah jadwal, atau salah tempat.
+            </p>
+          </div>
+
+          <div
+            class="flex flex-col md:flex-row justify-center items-center gap-8"
+          >
+            <div
+              class="bg-[#1C1C1C] border border-white/20 rounded-xl p-8 w-full md:w-2/5 lg:w-1/3"
+              data-aos="zoom-in-up"
+              data-aos-duration="1000"
+            >
+              <div class="border-b border-white/20 pb-4 mb-6">
+                <h3 class="text-xl tracking-widest font-semibold text-white/90">
+                  AKAD NIKAH
+                </h3>
+              </div>
+              <div class="flex justify-around items-start text-center mb-6">
+                <div class="flex flex-col items-center gap-2">
+                  <i class="fa-regular fa-clock text-3xl text-[#F472B6]"></i>
+                  <p id="waktu-akad" class="mt-2"></p>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                  <i
+                    class="fa-regular fa-calendar-days text-3xl text-[#F472B6]"
+                  ></i>
+                  <p id="tanggal-akad" class="mt-2"></p>
+                </div>
+              </div>
+              <div class="border-t border-white/20 pt-4">
+                <p class="text-xs text-white/60">
+                  Saat acara akad diharapkan untuk kondusif menjaga kehidmatan
+                  dan kekhusyuan seluruh prosesi.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-[#1C1C1C] border border-white/20 rounded-xl p-8 w-full md:w-2/5 lg:w-1/3"
+              data-aos="zoom-in-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              <div class="border-b border-white/20 pb-4 mb-6">
+                <h3 class="text-xl tracking-widest font-semibold text-white/90">
+                  RESEPSI
+                </h3>
+              </div>
+              <div class="flex justify-around items-start text-center mb-6">
+                <div class="flex flex-col items-center gap-2">
+                  <i class="fa-regular fa-clock text-3xl text-[#F472B6]"></i>
+                  <p id="waktu-resepsi" class="mt-2"></p>
+                </div>
+                <div class="flex flex-col items-center gap-2">
+                  <i
+                    class="fa-regular fa-calendar-days text-3xl text-[#F472B6]"
+                  ></i>
+                  <p id="tanggal-resepsi" class="mt-2"></p>
+                </div>
+              </div>
+              <div class="border-t border-white/20 pt-4">
+                <p class="text-xs text-white/60">
+                  Saat acara resepsi diharapkan untuk kondusif menjaga
+                  kehidmatan dan kekhusyuan seluruh prosesi.
+                </p>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <section id="cerita" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+          <h2
+            class="font-dancing text-5xl text-gray-800 text-center mb-12"
+            data-aos="fade-up"
+          >
+            Cerita Kami
+          </h2>
+          <div id="cerita-container" class="relative">
+            <div class="hidden md:block absolute h-full border-l-2 border-gray-300 left-1/2 transform -translate-x-1/2"></div>
+            <!-- <div
+              class="flex flex-col md:flex-row items-center mb-12"
+              data-aos="fade-right"
+            >
+              <div class="md:w-1/2 md:pr-8 mb-4 md:mb-0">
+                <img
+                  src="assets/img/cerita1.jpg"
+                  alt="Awal Bertemu"
+                  class="rounded-lg shadow-lg w-full"
+                />
+              </div>
+              <div class="md:w-1/2 md:pl-8 text-center md:text-left">
+                <h3 class="font-playfair text-3xl text-gray-700 mb-2">
+                  Awal Bertemu
+                </h3>
+                <p>
+                  Kami pertama kali bertemu di sebuah acara komunitas. Dari
+                  obrolan ringan, kami menemukan banyak kesamaan dan merasa
+                  nyaman satu sama lain.
+                </p>
+              </div>
+            </div> -->
+            <!-- <div
+              class="flex flex-col md:flex-row-reverse items-center mb-12"
+              data-aos="fade-left">
+              <div class="md:w-1/2 md:pl-8 mb-4 md:mb-0">
+                <img
+                  src="assets/img/cerita2.jpg"
+                  alt="Lamaran"
+                  class="rounded-lg shadow-lg w-full"
+                />
+              </div>
+              <div class="md:w-1/2 md:pr-8 text-center md:text-right">
+                <h3 class="font-playfair text-3xl text-gray-700 mb-2">
+                  Lamaran
+                </h3>
+                <p>
+                  Setelah beberapa tahun menjalin hubungan, Dika melamar Rara di
+                  tempat favorit kami, di bawah langit senja yang indah. Momen
+                  itu tak akan terlupakan.
+                </p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <section id="galeri" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+          <h2
+            class="font-dancing text-5xl text-gray-800 text-center mb-12"
+            data-aos="fade-up"
+          >
+            Galeri Kenangan
+          </h2>
+          <div id="galeri-container" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <!-- <div class="grid gap-4">
+              <div data-aos="zoom-in">
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src="assets/img/galeri-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div data-aos="zoom-in">
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src="assets/img/galeri-2.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div data-aos="zoom-in">
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src="assets/img/galeri-3.jpg"
+                  alt=""
+                />
+              </div>
+              <div data-aos="zoom-in">
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src="assets/img/galeri-4.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div data-aos="zoom-in">
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src="assets/img/galeri-5.jpg"
+                  alt=""
+                />
+              </div>
+              <div data-aos="zoom-in">
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src="assets/img/galeri-6.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div data-aos="zoom-in">
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src="assets/img/galeri-7.jpg"
+                  alt=""
+                />
+              </div>
+              <div data-aos="zoom-in">
+                <img
+                  class="h-auto max-w-full rounded-lg"
+                  src="assets/img/galeri-8.jpg"
+                  alt=""
+                />
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <section id="rsvp" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+          <h2
+            class="font-dancing text-5xl text-gray-800 text-center mb-12"
+            data-aos="fade-up"
+          >
+            Konfirmasi & Doa
+          </h2>
+          <div
+            class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg"
+            data-aos="fade-up"
+          >
+            <h3 class="font-playfair text-3xl text-center mb-6">
+              Konfirmasi Kehadiran
+            </h3>
+            <form id="rsvp-form">
+              <div class="mb-4">
+                <label for="nama" class="block text-gray-700 mb-2">Nama</label>
+                <input
+                  type="text"
+                  id="nama"
+                  name="nama"
+                  class="w-full px-3 py-2 border rounded-lg"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 mb-2">Konfirmasi</label>
+                <select
+                  id="kehadiran"
+                  name="kehadiran"
+                  class="w-full px-3 py-2 border rounded-lg"
+                  required
+                >
+                  <option value="Hadir">Hadir</option>
+                  <option value="Tidak Hadir">Tidak Hadir</option>
+                </select>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700"
+              >
+                Kirim Konfirmasi
+              </button>
+            </form>
+            <div id="rsvp-feedback" class="text-center mt-4"></div>
+          </div>
+
+          <div
+            class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg mt-12"
+            data-aos="fade-up"
+          >
+            <h3 class="font-playfair text-3xl text-center mb-6">
+              Kirim Pesan & Doa
+            </h3>
+            <form id="pesan-form">
+              <div class="mb-4">
+                <label for="nama_pesan" class="block text-gray-700 mb-2"
+                  >Nama</label
+                >
+                <input
+                  type="text"
+                  id="nama_pesan"
+                  name="nama"
+                  class="w-full px-3 py-2 border rounded-lg"
+                  required
+                />
+              </div>
+              <div class="mb-4">
+                <label for="pesan" class="block text-gray-700 mb-2"
+                  >Pesan & Doa</label
+                >
+                <textarea
+                  id="pesan"
+                  name="pesan"
+                  rows="4"
+                  class="w-full px-3 py-2 border rounded-lg"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-gray-800 text-white py-2 px-4 rounded-lg hover:bg-gray-700"
+              >
+                Kirim Pesan
+              </button>
+            </form>
+          </div>
+
+          <div class="max-w-2xl mx-auto mt-12" data-aos="fade-up">
+            <h3 class="font-playfair text-3xl text-center mb-6">
+              Pesan & Doa Restu
+            </h3>
+            <div
+              id="daftar-pesan"
+              class="bg-white p-6 rounded-lg shadow-lg max-h-96 overflow-y-auto"
+            >
+              <div class="border-b pb-4 mb-4">
+                <p class="font-semibold">Contoh Nama</p>
+                <p class="text-gray-600">
+                  Selamat ya Rara & Dika! Semoga menjadi keluarga yang sakinah,
+                  mawaddah, warahmah.
+                </p>
+              </div>
+            </div>
+            <div id="pagination-pesan" class="flex justify-center mt-4"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="amplop" class="py-20 bg-white text-center">
+        <div class="container mx-auto px-4">
+          <h2
+            class="font-dancing text-5xl text-gray-800 mb-4"
+            data-aos="fade-up"
+          >
+            Amplop Digital
+          </h2>
+          <p
+            class="max-w-2xl mx-auto mb-8 text-gray-600"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
+            Namun jika memberi adalah ungkapan tanda kasih, Anda dapat memberi
+            kado secara digital.
+          </p>
+        
+          <p class="text-center font-semibold text-gray-700 pt-4">Klik untuk Buka</p>
+          <div id="envelope-wrapper" class="envelope-wrapper cursor-pointer" data-aos="zoom-in" data-aos-delay="200">
+            <div class="envelope">
+                <div class="letter">
+                </div>
+                <div class="flap"></div>
+            </div>
+        </div>
+
+          <div
+            id="detail-amplop"
+            class="hidden max-w-2xl mx-auto mt-8 text-left bg-gray-50 p-8 rounded-lg shadow-inner"
+          >
+            <div class="mb-6">
+              <h4 id="nama-bank" class="font-semibold text-lg mb-2"></h4>
+              <div
+                class="flex items-center justify-between bg-white p-3 rounded-lg"
+              >
+                <p id="nomor-rekening"></p>
+                <button
+                  onclick="copyToClipboard('nomor-rekening')"
+                  class="bg-gray-200 px-3 py-1 rounded text-sm hover:bg-gray-300"
+                >
+                  Salin
+                </button>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <h4 id="nama-ewallet" class="font-semibold text-lg mb-2"></h4>
+              <div
+                class="flex items-center justify-between bg-white p-3 rounded-lg"
+              >
+                <p id="nomor-ewallet"></p>
+                <button
+                  onclick="copyToClipboard('nomor-ewallet')"
+                  class="bg-gray-200 px-3 py-1 rounded text-sm hover:bg-gray-300"
+                >
+                  Salin
+                </button>
+              </div>
+            </div>
+
+            <div class="text-center mt-4">
+              <p id="copy-feedback" class="text-green-600 h-4"></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-gray-800 text-white py-8 text-center">
+        <p id="footer-nama-mempelai" class="font-playfair text-2xl mb-2"></p>
+        <p class="mb-2">Terima kasih atas doa restu Anda.</p>
+        <p class="mb-8">Made with love by <a href="https://www.instagram.com/thankgocompany/">@thankgodigital</a></p>
+        <div class="flex justify-center space-x-4 mb-10">
+          <a href="#" class="hover:text-gray-400"
+            ><i class="fab fa-instagram fa-lg"></i
+          ></a>
+          <a href="#" class="hover:text-gray-400"
+            ><i class="fab fa-facebook fa-lg"></i
+          ></a>
+          <a href="#" class="hover:text-gray-400"
+            ><i class="fab fa-tiktok fa-lg"></i
+          ></a>
+        </div>
+        <p class="text-sm text-gray-500">&copy; 2025. Made by thankgo.</p>
+      </footer>
+    </main>
+
+    <nav
+      id="bottom-nav"
+      class="sparkle-nav hidden fixed bottom-4 left-1/2 -translate-x-1/2 w-auto bg-[#A78B71]/80 backdrop-blur-md rounded-full shadow-lg z-40"
+    >
+      <div class="flex justify-center items-center gap-2 md:gap-4 px-4">
+        <a
+          href="#home"
+          class="nav-item flex flex-col items-center text-white/80 hover:text-white py-2 px-2 transition-all duration-300"
+        >
+          <i class="fa-solid fa-user-group text-lg"></i>
+          <span class="text-xs mt-1 font-semibold uppercase tracking-wider"
+            >Mempelai</span
+          >
+        </a>
+        <a
+          href="#acara"
+          class="nav-item flex flex-col items-center text-white/80 hover:text-white py-2 px-2 transition-all duration-300"
+        >
+          <i class="fa-solid fa-calendar-check text-lg"></i>
+          <span class="text-xs mt-1 font-semibold uppercase tracking-wider"
+            >Acara</span
+          >
+        </a>
+        <a
+          href="#cerita"
+          class="nav-item flex flex-col items-center text-white/80 hover:text-white py-2 px-2 transition-all duration-300"
+        >
+          <i class="fa-solid fa-book text-lg"></i>
+          <span class="text-xs mt-1 font-semibold uppercase tracking-wider"
+            >Cerita</span
+          >
+        </a>
+        <a
+          href="#galeri"
+          class="nav-item flex flex-col items-center text-white/80 hover:text-white py-2 px-2 transition-all duration-300"
+        >
+          <i class="fa-solid fa-images text-lg"></i>
+          <span class="text-xs mt-1 font-semibold uppercase tracking-wider"
+            >Galeri</span
+          >
+        </a>
+        <a
+          href="#rsvp"
+          class="nav-item flex flex-col items-center text-white/80 hover:text-white py-2 px-2 transition-all duration-300"
+        >
+          <i class="fa-solid fa-envelope-open-text text-lg"></i>
+          <span class="text-xs mt-1 font-semibold uppercase tracking-wider"
+            >RSVP</span
+          >
+        </a>
+        <a
+          href="#amplop"
+          class="nav-item flex flex-col items-center text-white/80 hover:text-white py-2 px-2 transition-all duration-300"
+        >
+          <i class="fa-solid fa-gift text-lg"></i>
+          <span class="text-xs mt-1 font-semibold uppercase tracking-wider"
+            >Amplop</span
+          >
+        </a>
+      </div>
+    </nav>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>

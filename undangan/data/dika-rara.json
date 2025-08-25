@@ -1,0 +1,61 @@
+{
+  "slug": "dika-rara",
+  "nama_pria": "Dika Perkasa",
+  "nama_wanita": "Rara Anindita",
+  "sapaan_pria": "Dika",
+  "sapaan_wanita": "Rara",
+  "orangtua_pria": "Putra dari Bapak John Doe & Ibu Jane Doe",
+  "orangtua_wanita": "Putri dari Bapak Michael Smith & Ibu Sarah Smith",
+  "tanggal_akad": "Minggu, 10 Desember 2025",
+  "waktu_akad": "09:00 - 10:00 WIB",
+  "tanggal_resepsi": "Minggu, 10 Desember 2025",
+  "waktu_resepsi": "11:00 - 15:00 WIB",
+  "lokasi": {
+    "nama": "Cirebon Superblock",
+    "alamat": "Jl. Dr. Cipto Mangunkusumo No.26, Pekiringan, Kec. Kesambi, Kota Cirebon, Jawa Barat 45131"
+  },
+  "maps_url": "https://maps.app.goo.gl/xxxxxxxxx",
+  "musik": "/undangan/Template1/assets/audio/Nothing's Gonna Change My Love For You.mp3",
+  "foto": {
+    "pria": "/undangan/Template1/assets/img/man.png",
+    "wanita": "/undangan/Template1/assets/img/woman.png",
+    "sampul": "/undangan/Template1/assets/img/bg-sampul.jpg"
+  },
+  "galeri": [
+    "/undangan/Template1/assets/img/galeri-1.jpg",
+    "/undangan/Template1/assets/img/galeri-2.jpg",
+    "/undangan/Template1/assets/img/galeri-3.jpg",
+    "/undangan/Template1/assets/img/galeri-4.jpg",
+    "/undangan/Template1/assets/img/galeri-5.jpg",
+    "/undangan/Template1/assets/img/galeri-6.jpg"
+  ],
+  "cerita": [
+    {
+      "judul": "Awal Bertemu",
+      "deskripsi": "Kami pertama kali bertemu di sebuah acara komunitas. Dari obrolan ringan, kami menemukan banyak kesamaan dan merasa nyaman satu sama lain.",
+      "gambar": "/undangan/Template1/assets/img/cerita1.jpg"
+    },
+    {
+      "judul": "Lamaran",
+      "deskripsi": "Setelah beberapa tahun menjalin hubungan, Dika melamar Rara di tempat favorit kami, di bawah langit senja yang indah. Momen itu tak akan terlupakan.",
+      "gambar": "/undangan/Template1/assets/img/cerita2.jpg"
+    },
+    {
+      "judul": "Menuju Hari Bahagia",
+      "deskripsi": "Kini kami bersiap menyambut hari bahagia kami, dan kami ingin Anda menjadi bagian dari momen spesial ini. Doa dan restu Anda sangat berarti bagi kami.",
+      "gambar": "/undangan/Template1/assets/img/cerita2.jpg"
+    }
+  ],
+  "rekening": {
+    "bank": {
+      "nama": "BCA",
+      "nomor": "1234567890",
+      "atas_nama": "Dika Perkasa"
+    },
+    "ewallet": {
+      "nama": "Dana/OVO",
+      "nomor": "081234567890",
+      "atas_nama": "Rara Anindita"
+    }
+  }
+}

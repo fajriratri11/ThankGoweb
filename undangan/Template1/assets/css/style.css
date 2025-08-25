@@ -1,0 +1,182 @@
+/* Menggunakan font dari Google Fonts */
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-playfair {
+  font-family: "Playfair Display", serif;
+}
+.font-dancing {
+  font-family: "Dancing Script", cursive;
+}
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Mencegah scroll pada body saat sampul terbuka */
+.no-scroll {
+  overflow: hidden;
+}
+
+/* Animasi piringan hitam berputar */
+.spinning {
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Style untuk nav item yang aktif */
+.nav-item.active {
+  color: #1f2937; /* text-gray-800 */
+  font-weight: 600;
+}
+
+/* ============================================= */
+/* STYLE AMPLOP CSS INTERAKTIF         */
+/* ============================================= */
+
+/* Wrapper utama untuk efek 3D */
+.envelope-wrapper {
+  perspective: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+/* Badan Amplop */
+.envelope {
+  position: relative;
+  width: 280px;
+  height: 180px;
+  background-color: #f0e8e0; /* Warna krem lembut */
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Tutup Amplop (segitiga) */
+.envelope .flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px; /* Setengah tinggi amplop */
+  background-color: #e6dace; /* Warna sedikit lebih gelap */
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  transform-origin: top;
+  transition: transform 0.5s ease-in-out;
+  z-index: 3;
+}
+
+/* Surat di dalam amplop */
+.envelope .letter {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  height: 90%;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+  z-index: 1;
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s;
+  transition-delay: 0.2s; /* Surat baru bergerak setelah tutup terbuka sedikit */
+}
+
+/* === STATE SAAT TERBUKA === */
+
+/* Saat amplop di-klik (kelas .open ditambahkan via JS) */
+.envelope-wrapper.open .flap {
+  transform: rotateX(180deg);
+  z-index: 0;
+}
+
+.envelope-wrapper.open .letter {
+  transform: translateY(-80px); /* Surat naik ke atas */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan surat lebih jelas */
+}
+
+/* Kondisi awal sebelum muncul */
+#detail-amplop {
+  opacity: 0;
+  transform: translateY(20px); /* Mulai dari sedikit di bawah */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Kondisi saat sudah terlihat (setelah kelas .visible ditambahkan) */
+#detail-amplop.visible {
+  opacity: 1;
+  transform: translateY(0); /* Kembali ke posisi normal */
+}
+
+@media (max-width: 768px) {
+  #home {
+    height: auto; /* Mengubah tinggi menjadi otomatis */
+    padding-top: 100px; /* Menambah jarak dari atas */
+    padding-bottom: 100px; /* Menambah jarak ke bawah */
+  }
+}
+
+@media (max-width: 767px) {
+  #bottom-nav {
+    width: 90%; /* Batasi lebar navigasi menjadi 90% dari lebar layar */
+  }
+}
+
+/* ============================================= */
+/* RESPONSIVE UNTUK NAVIGASI BAWAH              */
+/* ============================================= */
+
+/* Aturan ini akan aktif untuk layar dengan lebar 768px atau kurang (ukuran mobile/tablet) */
+@media (max-width: 768px) {
+  #bottom-nav {
+    /* Membuat navigasi membentang selebar layar */
+    left: 1rem; /* Jarak 16px dari kiri */
+    right: 1rem; /* Jarak 16px dari kanan */
+    transform: translateX(0); /* Menghapus properti translate-x-1/2 */
+    width: auto; /* Membiarkan width diatur oleh left dan right */
+  }
+
+  #bottom-nav > div {
+    /* Mengatur agar tombol terdistribusi merata */
+    width: 100%;
+    justify-content: space-evenly; /* Memberi spasi seimbang */
+    padding: 0 0.25rem; /* Mengurangi padding horizontal */
+    gap: 0; /* Menghapus gap agar justify-evenly bekerja maksimal */
+  }
+
+  #bottom-nav .nav-item span {
+    /* Opsional: Menyembunyikan teks jika layar terlalu sempit */
+    /* Jika Anda ingin tetap menampilkan teks, hapus bagian ini */
+  }
+}
+
+/* Aturan untuk layar yang SANGAT sempit (misal: iPhone SE) */
+@media (max-width: 380px) {
+  #bottom-nav .nav-item span {
+    /* Sembunyikan teks di layar yang sangat kecil agar ikon tidak berantakan */
+    display: none;
+  }
+
+  #bottom-nav .nav-item i {
+    /* Sedikit memperbesar ikon saat teks hilang */
+    font-size: 1.25rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  /* Memberi efek sesaat ketika tombol DIKETUK */
+  .nav-item:active {
+    transform: scale(0.95); /* Sedikit mengecil saat disentuh */
+    color: black;
+  }
+}
