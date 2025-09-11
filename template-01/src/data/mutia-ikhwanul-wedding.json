@@ -1,0 +1,41 @@
+{
+  "music": "/music/wedding-song.mp3",
+  "groom": {
+    "name": "Dika",
+    "parent": "Bapak/Ibu Santoso",
+    "photo": "/images/dika.jpg"
+  },
+  "bride": {
+    "name": "Rara",
+    "parent": "Bapak/Ibu Sudarmo",
+    "photo": "/images/rara.jpg"
+  },
+  "event": {
+    "akad": {
+      "date": "2025-09-20",
+      "time": "09:00 WIB",
+      "location": "Masjid Agung Yogyakarta"
+    },
+    "resepsi": {
+      "date": "2025-09-20",
+      "time": "11:00 WIB",
+      "location": "Gedung Graha Sabha"
+    }
+  },
+  "story": [
+    {
+      "title": "Pertemuan Pertama",
+      "desc": "Dika dan Rara pertama kali bertemu di kampus."
+    },
+    {
+      "title": "Lamaran",
+      "desc": "Pada 10 Mei 2025, Dika melamar Rara."
+    }
+  ],
+  "gallery": ["/images/1.jpg", "/images/2.jpg", "/images/3.jpg"],
+  "gift": {
+    "bank": "BCA",
+    "account": "1234567890",
+    "name": "Dika"
+  }
+}
