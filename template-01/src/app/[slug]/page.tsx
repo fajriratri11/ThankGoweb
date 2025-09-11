@@ -7,6 +7,13 @@ import RSVPForm from "@/components/RSVPForm";
 import DigitalGift from "@/components/DigitalGift";
 import Footer from "@/components/Footer";
 
+// ✅ Tambahkan ini biar Next tahu slug mana aja
+export async function generateStaticParams() {
+  // misalnya kamu simpan JSON di src/data
+  const couples = ["mutia-ikhwanul-wedding"];
+  return couples.map((slug) => ({ slug }));
+}
+
 export default async function WeddingPage({
   params,
 }: {
@@ -15,7 +22,7 @@ export default async function WeddingPage({
   const data = await getWeddingData(params.slug);
 
   if (!data) {
-    return <div className="text-center py-20">Undangan tidak ditemukan</div>;
+    return <main className="text-center py-20">Undangan tidak ditemukan</main>;
   }
 
   return (
