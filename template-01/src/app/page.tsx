@@ -19,14 +19,16 @@ export default async function WeddingPage({
   }
 
   return (
-    <main className="bg-gray-50 text-gray-800">
-      <LockScreen couple={`${data.groom.name} & ${data.bride.name}`} />
-      <CoupleInfo groom={data.groom} bride={data.bride} />
-      <EventInfo event={data.event} />
-      <Gallery gallery={data.gallery} />
-      <RSVPForm />
-      <DigitalGift gift={data.gift} />
-      <Footer />
+    <main className="bg-gray-50 text-gray-800 min-h-screen flex justify-center">
+      <div className="w-full max-w-sm shadow-lg">
+        <LockScreen couple={`${data.groom.name} & ${data.bride.name}`} />
+        <CoupleInfo groom={data.groom} bride={data.bride} />
+        <EventInfo event={data.event} />
+        <Gallery gallery={data.gallery} />
+        <RSVPForm />
+        <DigitalGift gift={data.gift} />
+        <Footer />
+      </div>
     </main>
   );
 }
