@@ -7,11 +7,19 @@ import RSVPForm from "@/components/RSVPForm";
 import DigitalGift from "@/components/DigitalGift";
 import Footer from "@/components/Footer";
 
-// ✅ Tambahkan ini biar Next tahu slug mana aja
+import fs from "fs";
+import path from "path";
+
+// ✅ Biar Next tahu semua slug dari folder data
 export async function generateStaticParams() {
-  // misalnya kamu simpan JSON di src/data
-  const couples = ["mutia-ikhwanul-wedding"];
-  return couples.map((slug) => ({ slug }));
+  const dataDir = path.join(process.cwd(), "src/data");
+  const files = fs.readdirSync(dataDir);
+
+  return files
+    .filter((file) => file.endsWith(".json"))
+    .map((file) => ({
+      slug: file.replace(".json", ""),
+    }));
 }
 
 export default async function WeddingPage({
@@ -26,14 +34,16 @@ export default async function WeddingPage({
   }
 
   return (
-    <main className="bg-gray-50 text-gray-800">
-      <LockScreen couple={`${data.groom.name} & ${data.bride.name}`} />
-      <CoupleInfo groom={data.groom} bride={data.bride} />
-      <EventInfo event={data.event} />
-      <Gallery gallery={data.gallery} />
-      <RSVPForm />
-      <DigitalGift gift={data.gift} />
-      <Footer />
+    <main className="bg-gray-50 text-gray-800 min-h-screen flex justify-center">
+      <div className="w-full max-w-sm shadow-lg">
+        <LockScreen couple={`${data.groom.name} & ${data.bride.name}`} />
+        <CoupleInfo groom={data.groom} bride={data.bride} />
+        <EventInfo event={data.event} />
+        <Gallery gallery={data.gallery} />
+        <RSVPForm />
+        <DigitalGift gift={data.gift} />
+        <Footer />
+      </div>
     </main>
   );
 }
