@@ -1,41 +1,35 @@
 {
-  "music": "/music/wedding-song.mp3",
+  "music": "/music/song.mp3",
   "groom": {
-    "name": "Dika",
-    "parent": "Bapak/Ibu Santoso",
-    "photo": "/images/dika.jpg"
+    "name": "Ikhwanul",
+    "parent": "Bpk/Ibu A",
+    "photo": "/img/groom.jpg"
   },
   "bride": {
-    "name": "Rara",
-    "parent": "Bapak/Ibu Sudarmo",
-    "photo": "/images/rara.jpg"
+    "name": "Mutia",
+    "parent": "Bpk/Ibu B",
+    "photo": "/img/bride.jpg"
   },
   "event": {
     "akad": {
       "date": "2025-09-20",
       "time": "09:00 WIB",
-      "location": "Masjid Agung Yogyakarta"
+      "location": "Masjid Agung"
     },
     "resepsi": {
       "date": "2025-09-20",
       "time": "11:00 WIB",
-      "location": "Gedung Graha Sabha"
+      "location": "Gedung Serbaguna"
     }
   },
   "story": [
-    {
-      "title": "Pertemuan Pertama",
-      "desc": "Dika dan Rara pertama kali bertemu di kampus."
-    },
-    {
-      "title": "Lamaran",
-      "desc": "Pada 10 Mei 2025, Dika melamar Rara."
-    }
+    { "title": "Awal Bertemu", "desc": "Kami bertemu di kampus..." },
+    { "title": "Lamaran", "desc": "Lamaran pada 10 Mei 2025" }
   ],
-  "gallery": ["/images/1.jpg", "/images/2.jpg", "/images/3.jpg"],
+  "gallery": ["/img1.jpg", "/img2.jpg"],
   "gift": {
     "bank": "BCA",
     "account": "1234567890",
-    "name": "Dika"
+    "name": "Ikhwanul"
   }
 }
